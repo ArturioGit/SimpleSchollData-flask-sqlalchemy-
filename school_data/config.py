@@ -1,0 +1,4 @@
+DEBUG = True
+SECRET_KEY = "VMhc6cdx2xrw6b68zisVnjMQq2wYUAdDh24Ats"
+SQLALCHEMY_DATABASE_URI = 'sqlite:///mainBase.db'
+SQLALCHEMY_TRACK_MODIFICATIONS = False

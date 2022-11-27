@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href={{url_for('static', filename='css/style.css' )}}>
+        <meta charset="UTF-8">
+        <title>SchoolData</title>
+    </head>
+    <body>
+        <header class="header">
+            <div class="header__body">
+                <div class="header__logo logo">
+                    <a href={{url_for('main.about')}} class="logo__link">
+                        <img class="logo__img" src={{url_for('static', filename='img/logo/MainLogoBook.png')}} alt="logo" >
+                    </a>
+                </div>
+                <nav class="header__nav">
+                    <ul class="header__list">
+                        <li class="header__item"><a href={{url_for('teachers.add_teacher')}} class="header__link">Teacher</a></li>
+                        <li class="header__item"><a href={{url_for('students.add_student')}} class="header__link">Student</a></li>
+                        <li class="header__item"><a href={{url_for('main.about')}} class="header__link">Main</a></li>
+                        <li class="header__item"><a href={{url_for('groups.add_group')}} class="header__link">Class</a></li>
+                        <li class="header__item"><a href={{url_for('subjects.add_subject')}} class="header__link">Subject</a></li>
+                    </ul>
+                </nav>
+           </div>
+        </header>
+        <main>
+            <div class="main__div__content">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="footer__body">
+                <h2 class="h2__footer">All rights reserved</h2>
+                <h2 class="h2__footer">It is just a joke :)</h2>
+            </div>
+        </footer>
+    </body>
+</html>

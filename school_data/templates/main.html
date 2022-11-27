@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+
+{% block content%}
+    <div>
+        <h1 class="h1">Welcome!</h1>
+        <div class="main__description">
+            This is a database describing the school. You can add teachers, classes, students and subjects
+        </div>
+        <div>
+            <img class="board__img" src={{ url_for('static', filename='img/board.jpg') }}>
+        </div>
+    </div>
+{% endblock %}

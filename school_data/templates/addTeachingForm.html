@@ -1,0 +1,45 @@
+{% extends 'baseForm.html'%}
+
+{% block From %}
+    <form action="{{ url_for('students.add_student') }}" method="post">
+        {{ form.hidden_tag() }}
+        <div class="form__blocks__box">
+            <div>
+                {{ form.group.label() }}
+                {% if form.group.errors %}
+                    {{ form.group(class="short__form__block") }}
+                    {% for error in form.group.errors %}
+                            <span class="validate__error__span">{{error}}</span>
+                    {% endfor %}
+                {% else %}
+                    {{ form.group(class="short__form__block") }}
+                {% endif %}
+            </div>
+            <div>
+                {{ form.subject.label() }}
+                {% if form.subject.errors %}
+                    {{ form.subject(class="long__form__block") }}
+                    {% for error in form.subject.errors %}
+                            <span class="validate__error__span">{{error}}</span>
+                    {% endfor %}
+                {% else %}
+                    {{ form.subject(class="long__form__block") }}
+                {% endif %}
+            </div>
+            <div>
+                {{ form.teacher.label() }}
+                {% if form.teacher.errors %}
+                    {{ form.teacher(class="long__form__block") }}
+                    {% for error in form.teacher.errors %}
+                            <span class="validate__error__span">{{error}}</span>
+                    {% endfor %}
+                {% else %}
+                    {{ form.teacher(class="long__form__block") }}
+                {% endif %}
+            </div>
+            <div>
+                {{ form.submit(class="submit__form__block") }}
+            </div>
+        </div>
+    </form>
+{% endblock %}

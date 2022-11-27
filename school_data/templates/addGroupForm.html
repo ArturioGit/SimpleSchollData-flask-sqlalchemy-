@@ -1,0 +1,24 @@
+{% extends 'baseForm.html'%}
+
+{% block From %}
+    <form action="{{ url_for('groups.add_group') }}" method="post">
+        {{ form.hidden_tag() }}
+        <div class="form__blocks__box">
+            <div>
+                {{ form.name.label() }}
+                {% if form.name.errors %}
+                    {{ form.name(class="short__form__block") }}
+                    {% for error in form.name.errors %}
+                            <span class="validate__error__span">{{error}}</span>
+                    {% endfor %}
+                {% else %}
+                    {{ form.name(class="short__form__block") }}
+                {% endif %}
+            </div>
+            <div>
+                {{ form.submit(class="submit__form__block") }}
+            </div>
+        </div>
+    </form>
+{% endblock %}
+
