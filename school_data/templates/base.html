@@ -15,20 +15,19 @@
                 </div>
                 <nav class="header__nav">
                     <ul class="header__list">
-                        <li class="header__item"><a href={{url_for('teachers.add_teacher')}} class="header__link">Teacher</a></li>
-                        <li class="header__item"><a href={{url_for('students.add_student')}} class="header__link">Student</a></li>
                         <li class="header__item"><a href={{url_for('main.about')}} class="header__link">Main</a></li>
-                        <li class="header__item"><a href={{url_for('groups.add_group')}} class="header__link">Class</a></li>
-                        <li class="header__item"><a href={{url_for('subjects.add_subject')}} class="header__link">Subject</a></li>
+                        <li class="header__item"><a href={{url_for('teachingS.add_teaching')}} class="header__link">Teaching</a></li>
+                        <li class="header__item"><a href={{url_for('teachers.show_teachers')}} class="header__link">Teacher</a></li>
+                        <li class="header__item"><a href={{url_for('students.add_student')}} class="header__link">Student</a></li>
+                        <li class="header__item"><a href={{url_for('groups.show_groups')}} class="header__link">Class</a></li>
+                        <li class="header__item"><a href={{url_for('subjects.show_subjects')}} class="header__link">Subject</a></li>
                     </ul>
                 </nav>
            </div>
         </header>
-        <main>
-            <div class="main__div__content">
-                {% block content %}
-                {% endblock %}
-            </div>
+        <main class="main__div__content">
+            {% block content %}
+            {% endblock %}
         </main>
         <footer class="footer">
             <div class="footer__body">

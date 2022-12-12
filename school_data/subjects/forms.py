@@ -21,3 +21,7 @@ class AddSubjectForm(FlaskForm):
         # Checking the presence of the name in the table
         if Subject.query.filter_by(name=name.data).first():
             raise ValidationError('This subject already exists')
+
+
+class EditSubjectForm(AddSubjectForm):
+    submit = SubmitField('Edit')

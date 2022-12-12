@@ -23,3 +23,7 @@ class AddGroupForm(FlaskForm):
         # Checking the presence of the name in the table
         if Group.query.filter_by(name=name.data).first():
             raise ValidationError('This class already exists')
+
+
+class EditGroupForm(AddGroupForm):
+    submit = SubmitField('Edit')

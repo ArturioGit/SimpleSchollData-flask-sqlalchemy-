@@ -9,3 +9,7 @@ class AddTeachingForm(FlaskForm):
     subject = QuerySelectField('Subject', query_factory=[], allow_blank=True, validators=[DataRequired()])
     teacher = QuerySelectField('Teacher', query_factory=[], allow_blank=True, validators=[DataRequired()])
     submit = SubmitField('Add')
+
+
+class EditTeachingForm(AddTeachingForm):
+    submit = SubmitField('Edit')

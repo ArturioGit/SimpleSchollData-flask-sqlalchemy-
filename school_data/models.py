@@ -42,7 +42,7 @@ class Student(db.Model):
     group_id = db.Column(db.Integer, db.ForeignKey('group.id'), nullable=False)
 
     def __repr__(self):
-        return f"Student: {self.name}, {self.surname}, {self.group_id}"
+        return f"{self.name} {self.surname}"
 
 
 class Subject(db.Model):

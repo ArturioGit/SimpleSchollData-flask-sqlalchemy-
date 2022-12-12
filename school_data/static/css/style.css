@@ -24,11 +24,12 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 body{
     color: rgb(80, 80, 80);
     min-height: 100vh;
-
+    display: flex;
+    flex-direction: column;
 }
 
 a{
-    color: #000000;
+    color: rgb(80, 80, 80);
 }
 
 .h1{
@@ -39,9 +40,11 @@ a{
 
 .main__div__content{
     background: url("../img/background/MainBackground.png") repeat;
-    min-height: 880px;
+}
 
-
+main{
+    flex: 1 1 auto;
+    padding-bottom: 100px;
 }
 
 .header{
@@ -120,14 +123,16 @@ a{
 }
 
 .footer__body{
-    padding-top: 48px;
-    padding-bottom: 33px;
+    line-height: 3;
     text-align:center;
+    display: flex;
+    justify-content: center;
+    gap: 140px;
 }
 
 .h2__footer{
     font-size: 30px;
-    padding-bottom: 15px;
+
 }
 
 .form__frame{
@@ -154,7 +159,7 @@ a{
 
 .short__form__block{
     font-size: 27px;
-    width: 100px;
+    width: 135px;
     text-align:center;
     border: 3px solid white;
     background-color: rgb(220, 220, 220);
@@ -217,4 +222,122 @@ a{
 
 .success{
     background-color: rgba(0, 230, 0, 0.4);
+}
+
+.error{
+    background-color: rgba(230, 0, 0, 0.4);
+}
+
+.groups__frame{
+    font-size: 27px;
+    margin: 0 27%;
+    margin-top: 40px;
+    background-color: rgb(220, 220, 220);
+    border-radius: 10px;
+    border: 3px solid white;
+}
+
+.groups__box{
+    display: flex;
+    padding: 15px 5%;
+    flex-wrap: wrap;
+}
+
+.group__box{
+    padding: 10px 0;
+    width: 90px;
+    margin: 10px 20px;
+    text-align:center;
+    background-color: rgb(220, 220, 220);
+    border-radius: 10px;
+    border: 3px solid white;
+}
+
+.base__link{
+    color: rgb(80, 80, 80);
+}
+
+.li__box{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    padding-left: 50px;
+    gap: 20px;
+
+}
+
+.ol__block{
+    display: block;
+    justify-content: center;
+
+}
+
+.ol__box{
+    padding: 15px 5%;
+    padding-bottom: 40px;
+}
+
+.peoples__relative{
+    position:relative;
+    top:20px;
+    left:20px;
+    font-size: 34px;
+}
+
+.li_hidden{
+    visibility: hidden;
+}
+
+.tool__box{
+   margin: 14px 28%;
+   display: flex;
+   justify-content: space-between;
+}
+
+.page__box{
+    display: inline-block;
+    padding: 15px 20px;
+    background-color: rgb(220, 220, 220);
+    border-radius: 10px;
+    border: 3px solid white;
+    font-size: 22px;
+
+}
+
+.between__page{
+    font-size: 24px;
+}
+
+.add__people__box{
+    display: inline-block;
+    padding: 11px 18px;
+    background-color: rgb(220, 220, 220);
+    border-radius: 10px;
+    border: 3px solid white;
+    font-size: 30px;
+}
+
+.edit__pencil{
+    height: 30px;
+}
+
+.teacher__teaching{
+    height: 32px;
+}
+
+.people__box{
+    display: flex;
+    justify-content: space-between;
+}
+
+.delete__thing{
+    height: 30px;
+}
+
+.group__info__box{
+    display:flex;
+    padding: 30px 20px;
+    justify-content:space-between;
+    font-size: 33px;
 }

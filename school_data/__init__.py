@@ -1,7 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
-
 db = SQLAlchemy()
 
 
@@ -24,13 +23,11 @@ def create_app():
     return app
 
 
-app = create_app()
-db = SQLAlchemy(app)
+"""app = create_app()
+    db = SQLAlchemy(app)"""
 
-with app.app_context():
+"""with app.app_context():
     from school_data.models import Group, Subject, Student, Teacher, Teaching
-    db.create_all()
-
-
-
-
+    
+    db.session.add(artur_student)
+    db.session.commit()"""

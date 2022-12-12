@@ -1,0 +1,34 @@
+{% extends 'baseForm.html'%}
+
+{% block From %}
+    <form method="post">
+        {{ form.hidden_tag() }}
+        <div class="form__blocks__box">
+            <div>
+                {{ form.name.label() }}
+                {% if form.name.errors %}
+                    {{ form.name(class="middle__form__block") }}
+                    {% for error in form.name.errors %}
+                            <span class="validate__error__span">{{error}}</span>
+                    {% endfor %}
+                {% else %}
+                    {{ form.name(class="middle__form__block") }}
+                {% endif %}
+            </div>
+            <div>
+                {{ form.surname.label() }}
+                {% if form.surname.errors %}
+                    {{ form.surname(class="middle__form__block") }}
+                    {% for error in form.surname.errors %}
+                            <span class="validate__error__span">{{error}}</span>
+                    {% endfor %}
+                {% else %}
+                    {{ form.surname(class="middle__form__block") }}
+                {% endif %}
+            </div>
+            <div>
+                {{ form.submit(class="submit__form__block") }}
+            </div>
+        </div>
+    </form>
+{% endblock %}

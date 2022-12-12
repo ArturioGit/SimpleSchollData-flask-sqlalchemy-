@@ -1,0 +1,51 @@
+{% extends 'base.html'%}
+
+{% block content%}
+    <div>
+        <h1 class="h1">Teachers</h1>
+        <div class="groups__frame">
+            <div class="ol__box">
+                <h2 class="peoples__relative">Teachers:</h2>
+              <ol class="ol__block">
+                  <div class="li__box">
+                      <li value="{{ (page-1)*10 }}" class="li_hidden"></li>
+
+                    {% for teacher in teachers_group.items %}
+                      <li>
+                          <div class="people__box">
+                              <span>{{ teacher.name }} {{ teacher.surname }}</span>
+                              <span>
+                                  <a href={{url_for('teachers.delete_teacher', id=teacher.id) }}><img class="delete__thing" src={{url_for('static', filename='img/trash.png')}}></a>
+                                  <a href={{url_for('teachers.edit_teacher', id=teacher.id) }}><img class="edit__pencil" src={{url_for('static', filename='img/edit_pencil.png')}}></a>
+                                  <a href={{url_for('teachingS.show_by_teacher', id=teacher.id) }}><img class="teacher__teaching" src={{url_for('static', filename='img/book.png')}}></a>
+                              </span>
+                          </div>
+                      </li>
+                    {% endfor %}
+                  </div>
+              </ol>
+            </div>
+        </div>
+        <div class="tool__box">
+            <div>
+                {% for page_num in teachers_group.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=1) %}
+                    {% if page_num %}
+                        <a class="page__box" href={{url_for('teachers.show_teachers', page=page_num)}}>{{ page_num }}</a>
+                    {% else %}
+                        <span class="between__page">...</span>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div>
+                 <a class="add__people__box" href={{url_for('teachers.add_teacher')}}>+</a>
+            </div>
+        </div>
+        <div>
+            {% for category, message in get_flashed_messages(True) %}
+                 <div class="flash {{category}}">
+                    {{ message }}
+                 </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

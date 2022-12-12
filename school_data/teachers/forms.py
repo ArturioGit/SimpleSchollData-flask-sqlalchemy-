@@ -26,3 +26,7 @@ class AddTeacherForm(FlaskForm):
 
         if not is_correct:
             raise ValidationError('Surname should be like: Holod, Smit, Klyuchka')
+
+
+class EditTeacherForm(AddTeacherForm):
+    submit = SubmitField('Edit')

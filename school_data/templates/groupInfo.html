@@ -1,0 +1,39 @@
+{% extends 'base.html'%}
+
+{% block content%}
+    <div>
+        <h1 class="h1">Class</h1>
+        <div class="groups__frame">
+            <div class="group__info__box">
+                <div>
+                    {{ group }}
+                </div>
+
+                <div>
+                    <a href={{url_for('groups.delete_group', id=group.id )}}>
+                        <img class="delete__thing" src={{url_for('static', filename='img/trash.png' )}}>
+                    </a>
+
+                    <a href={{url_for('groups.edit_group', id=group.id )}}>
+                        <img class="edit__pencil" src={{url_for('static', filename='img/edit_pencil.png' )}}>
+                    </a>
+
+                    <a href={{url_for('teachingS.show_by_group', id=group.id)}}>
+                        <img class="edit__pencil" src={{url_for('static', filename='img/book.png' )}}>
+                    </a>
+
+                    <a href={{url_for('students.show_students', group_id=group.id )}}>
+                        <img class="edit__pencil" src={{url_for('static', filename='img/human.png' )}}>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div>
+            {% for category, message in get_flashed_messages(True) %}
+                 <div class="flash {{category}}">
+                    {{ message }}
+                 </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html'%}
+
+{% block content%}
+    <div>
+        <h1 class="h1">{{current_group}}</h1>
+        <div class="groups__frame">
+            <div class="ol__box">
+                <h2 class="peoples__relative">Students:</h2>
+              <ol class="ol__block">
+                  <div class="li__box">
+                      <li value="{{ (page-1)*10 }}" class="li_hidden"></li>
+
+                    {% for student in students_group.items %}
+                      <li>
+                          <div class="people__box">
+                              <span>{{ student.name }} {{ student.surname }}</span>
+                              <span>
+                                  <a href={{url_for('students.delete_student', id=student.id) }}><img class="delete__thing" src={{url_for('static', filename='img/trash.png')}}></a>
+                                  <a href={{url_for('students.edit_student', id=student.id) }}><img class="edit__pencil" src={{url_for('static', filename='img/edit_pencil.png')}}></a>
+                              </span>
+                          </div>
+                      </li>
+                    {% endfor %}
+                  </div>
+              </ol>
+            </div>
+        </div>
+        <div class="tool__box">
+            <div>
+                {% for page_num in students_group.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=1) %}
+                    {% if page_num %}
+                        <a class="page__box" href={{url_for('students.show_students', group_id=current_group.id, page=page_num)}}>{{ page_num }}</a>
+                    {% else %}
+                        <span class="between__page">...</span>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div>
+                 <a class="add__people__box" href={{url_for('students.add_student', group_id=current_group.id)}}>+</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

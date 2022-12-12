@@ -1,0 +1,19 @@
+{% extends 'base.html'%}
+
+{% block content%}
+    <div>
+        <h1 class="h1">Classes</h1>
+        <div class="groups__frame">
+            <div class="groups__box">
+              {% for group in groups %}
+                <div class="group__box">
+                  <a class="base__link" href={{ url_for('groups.show_group', id=group.id )}}>{{ group }}</a>
+                </div>
+              {% endfor %}
+                <div class="group__box">
+                  <a href={{url_for('groups.add_group')}} class="base__link">Add</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
