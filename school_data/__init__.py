@@ -23,11 +23,3 @@ def create_app():
     return app
 
 
-"""app = create_app()
-    db = SQLAlchemy(app)"""
-
-"""with app.app_context():
-    from school_data.models import Group, Subject, Student, Teacher, Teaching
-    
-    db.session.add(artur_student)
-    db.session.commit()"""
